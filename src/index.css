@@ -27,7 +27,19 @@
 }
 
 @layer components {
-    .border-color {
-        @apply border-secondary-200 dark:border-secondary-800;
+    .btn {
+        @apply ring-primary-300 dark:ring-primary-700 ring-offset-primary-50 dark:ring-offset-primary-950;
+        @apply cursor-pointer rounded-lg text-center ring-offset-2;
+        @apply transition-colors duration-150 focus:ring-2 focus:outline-none;
+        @apply hover:bg-secondary-500/25;
+        @apply px-2 py-1;
+    }
+
+    .btn-primary {
+        @apply bg-primary-500 hover:bg-primary-600 dark:hover:bg-primary-400 border-primary-500 border text-white;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary-50 hover:bg-secondary-200 dark:hover:bg-secondary-700 dark:bg-secondary-800 border-secondary-200 dark:border-secondary-800 border;
     }
 }

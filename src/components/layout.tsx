@@ -6,9 +6,14 @@ import Button from "./button"
 export interface LayoutProps {
     children?: React.ReactNode
     className?: string
+    breakpoint?: "sm" | "md" | "lg" | "xl" | "2xl"
 }
 
-export default function Layout({ children, className }: LayoutProps) {
+export default function Layout({
+    children,
+    className,
+    breakpoint = "md"
+}: LayoutProps) {
     const [expandSidebar, setExpandSidebar] = useState(true)
 
     return (
@@ -29,7 +34,8 @@ export default function Layout({ children, className }: LayoutProps) {
             <header className="col-start-3 col-end-5">Header</header>
             <nav
                 className={clsx("overflow-auto", {
-                    "md:col-start-2 md:col-end-4": expandSidebar
+                    [`${breakpoint}:col-start-2 ${breakpoint}:col-end-4`]:
+                        expandSidebar
                 })}
             >
                 My nav
@@ -38,7 +44,7 @@ export default function Layout({ children, className }: LayoutProps) {
                 className={clsx(
                     "dark:text-secondary-400 border-secondary-200 dark:bg-secondary-900 dark:border-secondary-800 mx-1 mb-1 overflow-auto rounded-md border bg-white shadow-sm",
                     "col-start-2 col-end-5",
-                    { "md:col-start-4": expandSidebar }
+                    { [`${breakpoint}:col-start-4`]: expandSidebar }
                 )}
             >
                 {children}

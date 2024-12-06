@@ -12,15 +12,7 @@ export default function Button({
     ...rest
 }: ButtonProps) {
     return (
-        <button
-            {...rest}
-            type={type}
-            className={clsx(
-                "hover:bg-secondary-500/25 ring-primary-300 dark:ring-primary-700 ring-offset-primary-50 dark:ring-offset-primary-950",
-                "cursor-pointer rounded-md text-center ring-offset-2 focus:ring-2 focus:outline-none",
-                className
-            )}
-        >
+        <button {...rest} type={type} className={clsx("btn", className)}>
             {children}
         </button>
     )
