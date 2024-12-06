@@ -1,8 +1,15 @@
+import Heading from "./components/heading"
+import Layout from "./components/layout"
+
 function App() {
     return (
-        <>
-            <h1>Hello World</h1>
-        </>
+        <Layout>
+            <div className="p-4 md:container md:mx-auto">
+                <Heading level={1} pageHeader>
+                    Hello World
+                </Heading>
+            </div>
+        </Layout>
     )
 }
 

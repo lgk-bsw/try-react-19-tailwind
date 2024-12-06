@@ -6,5 +6,6 @@
     "trailingComma": "none",
     "bracketSpacing": true,
     "bracketSameLine": false,
-    "fluid": false
+    "fluid": false,
+    "plugins": ["prettier-plugin-tailwindcss"]
 }
